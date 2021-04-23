@@ -1,9 +1,8 @@
 class Player {
-  constructor(name, token, wins) {
-    this.id = Date.Now()
+  constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = wins;
+    this.wins = 0;
   }
   saveToStorage() {
 
@@ -14,4 +13,5 @@ class Player {
   takeTurn() {
 
   }
+  
 }
