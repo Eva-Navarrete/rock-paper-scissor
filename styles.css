@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  font-family: 'Courgette', cursive;
+  border: 1px solid red;
+  background-color: #A9A9A9;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 75vw;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  height: 10em;
+  width: 20em;
+
+}
+
+.right-side,
+.left-side {
+  height: 100vh;
+  width: 30vw;
+}
+
+.hidden {
+  display: none;
+}

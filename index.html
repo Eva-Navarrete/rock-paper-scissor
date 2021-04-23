@@ -3,30 +3,46 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href=./styles.css>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Rock Paper Scissor</title>
   </head>
   <body>
-      <main>
-        <section>
-          <header> Rock Paper Scissor </header>
-          <h1>Choose your Game!</h1>
-            <section class="classic-game" id="classicGame">
-              <p>Classic</p>
-            </<section>
-            <section class="difficult-game" id="difficultGame">
-              <p>Difficult</p>
-            </section>
-          </section>
-          <aside class="right-side">
-            <h2 class="player-one" id="playerOne">Human 💃🏽</h2>
-            <p class="human-wins" id="humanWins"></p>
-            <button class="change-game-button hidden" id="changeGameButton">Change Game?</button>
-          </aside>
-          <aside class="left-side" id="leftSide">
-            <h2 class="player-two" id="playerTwo">Computer 🤖</h2>
-            <p class="computer-wins" id="computerWins"></p>
-          </aside>
-        </section>
-    </main>
+    <aside class="right-side">
+      <div class="human-side">
+        <h3 class="player-one" id="playerOne">Human 💃🏽</h3>
+        <p class="human-wins" id="humanWins">Wins:</p>
+      </div>
+      <button class="change-game-button hidden" id="changeGameButton">Change Game?</button>
+    </aside>
+    <section class="container">
+      <header>
+        <h1> Rock Paper Scissor </h1>
+        <h2>Choose your Game!</h2>
+      </header>
+      <form>
+        <div class="classic-game game" id="classicGame">
+          <p>✂️CLASSIC📃</p>
+          <p>rock > scissors</p>
+          <p>paper > rock</p>
+          <p>scissors > paper</p>
+        </div>
+        <div class="difficult-game game" id="difficultGame">
+          <p>👽DIFFICULT🦎</p>
+          <p>rock >  scissors & lizzard</p>
+          <p>paper > rock & alien</p>
+          <p>scissors > paper & lizard</p>
+          <p>lizard > paper & alien</p>
+          <p>alien > scissors & rock</p>
+        </div>
+      </form>
+    </section>
+    <aside class="left-side" id="leftSide">
+      <div class="computer-side">
+        <h3 class="player-two" id="playerTwo">Computer 🤖</h3>
+        <p class="computer-wins" id="computerWins">Wins:</p>
+      </div>
+    </aside>
+    <section class="play-game" id="playGame">
   </body>
-</html>
+  </html>
