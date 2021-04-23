@@ -9,41 +9,57 @@
   </head>
   <body>
     <aside class="right-side">
-      <div class="human-side">
-        <h3 class="player-one" id="playerOne">Human 💃🏽</h3>
-        <p class="human-wins" id="humanWins">Wins:</p>
+      <div class="princess-side">
+        <img class="princess image" src="assets/princessMono.png">
+        <h3 class="player-one" id="humanPlayer">Princess Mononoke</h3>
+        <p class="princess-wins" id="princessWins">Wins:</p>
       </div>
       <button class="change-game-button hidden" id="changeGameButton">Change Game?</button>
     </aside>
     <section class="container">
       <header>
-        <h1> Rock Paper Scissor </h1>
+        <h1>Haku, Spritz, Calcifer</h1>
         <h2>Choose your Game!</h2>
       </header>
       <form>
         <div class="classic-game game" id="classicGame">
-          <p>✂️CLASSIC📃</p>
-          <p>rock > scissors</p>
-          <p>paper > rock</p>
-          <p>scissors > paper</p>
+          <p>CLASSIC</p>
+          <p>Haku > Calcifer</p>
+          <p>Spritz > Haku</p>
+          <p>Calcifer > Spritz</p>
         </div>
         <div class="difficult-game game" id="difficultGame">
-          <p>👽DIFFICULT🦎</p>
-          <p>rock >  scissors & lizzard</p>
-          <p>paper > rock & alien</p>
-          <p>scissors > paper & lizard</p>
-          <p>lizard > paper & alien</p>
-          <p>alien > scissors & rock</p>
+          <p>DIFFICULT</p>
+          <p>Haku >  Calcifer & No Face</p>
+          <p>Spritz > Haku & Totoro</p>
+          <p>Calcifer > Spritz & No Face</p>
+          <p>No Face > Spritz & Totoro</p>
+          <p>Totoro > Calcifer & Haku</p>
         </div>
       </form>
     </section>
     <aside class="left-side" id="leftSide">
-      <div class="computer-side">
-        <h3 class="player-two" id="playerTwo">Computer 🤖</h3>
-        <p class="computer-wins" id="computerWins">Wins:</p>
+      <div class="turnip-side">
+        <img class="turnip image" src="assets/turnipHead.png">
+        <h3 class="player-two" id="CompPlayer">Turnip Head</h3>
+        <p class="turnip-wins" id="turnipWins">Wins:</p>
       </div>
     </aside>
-    <section class="play-game hidden" id="playGame">
+    <section class="gameboard1 hidden" id="gameboard1">
+      <div class="play-game" id="playGame">
+        <section>
+          <img class="token" id="calcifer" src="assets/calcifer.png">
+        </section>
+        <section>
+          <img class="token" id="spritz" src="assets/spritz.png">
+        </section>
+        <section>
+          <img class="token" id="haku" src="assets/haku1.png">
+        </section>
+      </div>
     </section>
+    <script src="./src/Player.js"></script>
+    <script src="./src/Game.js"></script>
+    <script src="./src/main.js"></script>
   </body>
   </html>
