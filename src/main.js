@@ -1,7 +1,12 @@
 // QUERY SELECTORS
-var classicGame = document.querySelector('classicGame');
-var difficultGame = document.querySelector('difficultGame');
-var gameboard = document.querySelector('gameboard1');
+var classicGame = document.getElementById('classicGame');
+var difficultGame = document.getElementById('difficultGame');
+var gameboard = document.getElementById('gameboard1');
+var humanPlayer = document.getElementById('humanPlayer')
+var compPlayer = document.getElementById('humanPlayer');
+var calciferToken = document.getElementById('calcifer');
+var spritzToken = document.getElementById('spritz');
+var hakuToken = document.getElementById('haku');
 
 // // EVENT LISTENERS
 // classicGame.addEventListener('click', displayClassicGame);

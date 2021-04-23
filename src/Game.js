@@ -4,7 +4,7 @@ class Game {
     this.computer = new Player(compPlayer);
     this.type = type;
     // this property whenever game is started will be assigned
-    // this.possibleToken = [add all five tokens in here first put the 3 easy tokens then the last two that make it difficult if a game .typ = doffcicult use all 5 if its classic use first 3];
+    // this.possibleToken = [add all five tokens in here first put the 3 easy tokens then the last two that make it difficult if a game this.type = doffcicult use all 5 if its classic use first 3];
   }
 
   // chooseGame() {
