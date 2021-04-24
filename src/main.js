@@ -1,32 +1,35 @@
 // QUERY SELECTORS
 var classicGame = document.getElementById('classicGame');
 var difficultGame = document.getElementById('difficultGame');
-var gameboard = document.getElementById('gameboard1');
+var gameChoices = document.getElementById('gameChoices');
+var gameboard = document.getElementById('gameboard');
 var humanPlayer = document.getElementById('humanPlayer')
 var compPlayer = document.getElementById('humanPlayer');
-var calciferToken = document.getElementById('calcifer');
-var spritzToken = document.getElementById('spritz');
-var hakuToken = document.getElementById('haku');
+var calciferFighter = document.getElementById('calcifer');
+var spritzFighter = document.getElementById('spritz');
+var hakuFighter = document.getElementById('haku');
+var noFaceFighter = document.getElementById('noFace');
+var totoroFighter = document.getElementById('totoro')
+
+
+// var turnipImg = document.getElementById('turnipImg');
+// var princessImg = document.getElementById('princessImg');
 
 // // EVENT LISTENERS
 // classicGame.addEventListener('click', displayClassicGame);
-// difficultGame.addEventListener('click', displayDifficultGame);
+difficultGame.addEventListener('click', displayDifficultGame);
 
-console.log(Game);
-console.log(Player);
 
 var game = new Game();
-game.chooseToken();
+game.chooseRandomIndex(this.fighter);
+console.log(game.computerWeapon);
 
 
 // FUNCTIONS
-function pickRandomToken() {
-  // return Math.floor(Math.random() *  );
-  //pass in the token choice's for computer for both classic and difficult game.
-}
+
 
 function show(element) {
-  element.classList.remove('hidden');
+  element.classList.toggle('hidden');
 }
 
 function hide(element) {
@@ -37,6 +40,13 @@ function displayClassicGame() {
   // this will hide the 'container' and display the game classic game board chosen with classic tokens
 }
 
-function displayDifficultGame() {
+function displayDifficultGame(event) {
+  if (event.target === difficultGame){
+    hide(gameChoices);
+    show(gameboard);
+    show(calciferFighter)
+    show(spritzFighter)
+    shoW()
+  }
   // this will hide the 'container' and display the game difficult game board choosen with difficult tokens
 }
