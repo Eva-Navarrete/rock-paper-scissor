@@ -6,8 +6,8 @@ class Game {
     this.gameType = gameType;
     // this property whenever game is started will be assigned
     this.fighter = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro'];
-    this.humanWeapon = null;
-    this.computerWeapon = null;
+    // this.humanWeapon = null;
+    // this.computerWeapon = null;
 
 
     // add all five tokens in here first put the 3 easy tokens then the last two that make it difficult if a game this.type = diffcicult use all 5 if its classic use first 3
@@ -23,37 +23,44 @@ class Game {
   chooseRandomIndex() {
 
     var randomIndex = Math.floor(Math.random() * this.fighter.length);
-    this.computerWeapon = this.fighter[randomIndex];
-    console.log(this.fighter);
-    return this.computerWeapon;
-
-      //pass in the token choice's for computer for both classic and difficult game.
-  }
-
-  fight(event) {
-    this.humanWeapon = (event.target.id)
-
-    // var fighters = this.fighter;
-    // var humanWeapon = this.humanWeapon;
-    //
-    // humanWeapon = fighter(event.target.id);
-
-    // if (event.target.id === 'calcifer') {
-    //   this.humanWeapon
-    // } else if (event.target.id === 'haku') {
-    //   this.humanWeapon
-    // } else if (event.target.id === 'spritz') {
-    //   this.humanWeapon
-    // }
+    this.computer.choice = this.fighter[randomIndex];
+    // console.log(this.fighter);
+    return this.computer.choice;
 
   }
+  chooseGameType() {
+    if (gameType === 'Classic') {
+      this.fighter = ['calcifer', 'spritz', 'haku'];
+    }
+  }
+  //pass in the token choice's for computer for both classic and difficult game. this.frigher = ['haku',]
+  //
+  // fight(event) {
+  //   this.humanWeapon = (event.target.id)
+  //
+  //   // var fighters = this.fighter;
+  //   // var humanWeapon = this.humanWeapon;
+  //   //
+  //   // humanWeapon = fighter(event.target.id);
+  //
+  //   // if (event.target.id === 'calcifer') {
+  //   //   this.humanWeapon
+  //   // } else if (event.target.id === 'haku') {
+  //   //   this.humanWeapon
+  //   // } else if (event.target.id === 'spritz') {
+  //   //   this.humanWeapon
+  //   // }
+  //
+  // }
+
+  // make a method which checks gametype if its difficult you get all five if its classic you get 3
 
 
   playClassicGame() {
-      if (this.humanWeapon === 'haku' && this.computerWeapon === 'calcifer') {
+      if (this.human.choice === 'haku' && this.computer.choice === 'calcifer') {
         this.human.isWinner = true;
         console.log('1st',this.human);
-      } else if (this.humanWeapon === 'spritz' && this.computerWeapon === 'haku') {
+      } else if (this.human.chocie === 'spritz' && this.computer.choice === 'haku') {
         this.human.isWinner = true;
         console.log('2nd',this.human);
       } else if (this.humanWeapon === 'calcifer' && this.computerWeapon === 'spritz') {

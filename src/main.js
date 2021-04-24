@@ -21,11 +21,11 @@ classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 gameboard.addEventListener('click', playClassic);
 
-var game = new Game();
+var game = {};
 // game.chooseRandomIndex(this.fighter);
 // game.playClassicGame();
 // console.log(game.computerWeapon);
-
+var gameType = '';
 
 // FUNCTIONS
 
@@ -39,43 +39,56 @@ function hide(element) {
 }
 
 function displayClassicGame() {
-  if (event.target === classicGame) {
+  gameType = 'Classic';
+  game = new Game(gameType);
     hide(gameSection);
     show(gameboard);
     hide(totoroFighter);
     hide(noFaceFighter);
 
-  }
-  // this will hide the 'container' and display the game classic game board chosen with classic tokens
 }
-
-function playClassic(){
-  game.playClassicGame();
-  game.fight();
-
-}
-
-// function fight(event) {
-//   // var fighters = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro']
-//   if (event.target === calciferFighter) {
-//     this.humanWeapon = calciferFighter;
-//   } else if (event.target === hakuFighter) {
-//     this.humanWeapon = hakuFighter;
-//   } else if (event.target === spritzFighter) {
-//     this.humanWeapon = spritzFighter
-//   }
-//
-//   game.playClassicGame();
-//   console.log("YOLO");
-// }
 
 function displayDifficultGame(event) {
-  if (event.target === difficultGame){
+  gameType = 'Difficult';
+  game = new Game(gameType);
     hide(gameSection);
     show(gameboard);
 
 
     // show()
-  }
+
   // this will hide the 'container' and display the game difficult game board choosen with difficult tokens
+}
+
+function playClassic(){
+  console.log('hello');
+  game.playClassicGame();
+  fight(event);
+
+}
+
+function fight(event) {
+  // var fighters = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro']
+  game.chooseRandomIndex();
+console.log(game.computer);
+// console.log();
+  if (event.target.id === 'calcifer') {
+    game.human.choice = 'calcifer'
+    console.log(game.human);
+    // this.humanWeapon = calciferFighter;
+  } else if (event.target.id === 'haku') {
+    console.log(event.target.id)
+    // this.humanWeapon = hakuFighter;
+  } else if (event.target.id === 'spritz') {
+    console.log(event.target.id)
+    // this.humanWeapon = spritzFighter
+  }else if (event.target.id === 'noFace') {
+    console.log(event.target.id);
+  } else if(event.target.id === 'totoro'){
+    console.log(event.target.id);
+  }
+
+
+
+  console.log("YOLO");
 }
