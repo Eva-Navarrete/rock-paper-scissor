@@ -20,47 +20,52 @@ class Game {
   //
   // }
   //
-  chooseRandomIndex(fighter) {
+  chooseRandomIndex() {
 
     var randomIndex = Math.floor(Math.random() * this.fighter.length);
     this.computerWeapon = this.fighter[randomIndex];
     console.log(this.fighter);
     return this.computerWeapon;
-  
+
       //pass in the token choice's for computer for both classic and difficult game.
   }
 
-  playClassicGame(choice) {
-    // console.log(this.fighter);
-    // console.log(this.human);
-    // console.log(this.computer);
-    choice = this.fighter;
+  fight(event) {
+    this.humanWeapon = (event.target.id)
+
+    // var fighters = this.fighter;
+    // var humanWeapon = this.humanWeapon;
+    //
+    // humanWeapon = fighter(event.target.id);
+
+    // if (event.target.id === 'calcifer') {
+    //   this.humanWeapon
+    // } else if (event.target.id === 'haku') {
+    //   this.humanWeapon
+    // } else if (event.target.id === 'spritz') {
+    //   this.humanWeapon
+    // }
+
+  }
+
+
+  playClassicGame() {
+      if (this.humanWeapon === 'haku' && this.computerWeapon === 'calcifer') {
+        this.human.isWinner = true;
+        console.log('1st',this.human);
+      } else if (this.humanWeapon === 'spritz' && this.computerWeapon === 'haku') {
+        this.human.isWinner = true;
+        console.log('2nd',this.human);
+      } else if (this.humanWeapon === 'calcifer' && this.computerWeapon === 'spritz') {
+        this.human.isWinner = true;
+        console.log('3rd',this.human);
+      }
+
     // /calciferFighter
     // pass in the players instance since they're choosing a game token.
     // which game token is being chosen.
   //   function results (choice) {
-  // if ( == choice){
-  //   //console.log('inside IF', choice)
-  //   return console.log("It's a DRAW!");
-  // } else if (choices[randomIndex] == "haku" && choice == "calcifer") {
-  //   //console.log('inside ELSE IF #1', choice)
-  //   return console.log("You lost!");
-  // } else if (choices[randomIndex] == "calcifer" && choice == "spritz") {
-  //   //console.log('inside ELSE IF #2', choice)
-  //   return console.log("You lost!");
-  // } else if (choices[randomIndex] == "spritz" && choice == "haku") {
-  //   //console.log('inside ELSE IF #3', choice)
-  //   return console.log("You lost!");
-  // } else if (choices[randomIndex] == "calcifer" && choice == "haku") {
-  //   //console.log('inside ELSE IF #4', choice)
-  //   return console.log("Congratulations! You won!");
-  // } else if (choices[randomIndex] == "spritz" && choice == "calcifer") {
-  //   //console.log('inside ELSE IF #5', choice)
-  //   return console.log("Congratulations! You won!");
-  // } else if (choices[randomIndex] == "haku" && choice == "spritz") {
-  //   //console.log('inside ELSE IF #6', choice)
-  //   return console.log("Congratulations! You won!");
-  // }
+
   //
   //
   //   // will need conditionals of which game token beats the other

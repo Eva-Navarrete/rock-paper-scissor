@@ -3,7 +3,8 @@ class Player {
     this.name = name;
     this.token = token;
     this.choice = null;
-    this.wins = 0;
+    this.totalWins = 0;
+    this.isWinner = false;
   }
   saveToStorage() {
     // I need to have the players information/properties saved to local storage

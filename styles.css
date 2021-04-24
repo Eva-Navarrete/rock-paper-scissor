@@ -54,7 +54,14 @@ div {
   height: 50vh;
 }
 .fighter {
-  height: 35vh;
+  height: 25vh;
+}
+
+.play-game {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 5em;
 }
 
 .hidden {
