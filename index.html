@@ -10,7 +10,7 @@
   <body>
     <aside class="right-side">
       <div class="princess-side">
-        <img class="princess image" src="assets/princessMono.png">
+        <img class="princess image" img="princessImg" src="assets/princessMono.png">
         <h3 class="player-one" id="humanPlayer">Princess Mononoke</h3>
         <p class="princess-wins" id="princessWins">Wins:</p>
       </div>
@@ -21,43 +21,51 @@
         <h1>Haku, Spritz, Calcifer</h1>
         <h2>Choose your Game!</h2>
       </header>
-      <form>
-        <div class="classic-game game" id="classicGame">
-          <p>CLASSIC</p>
-          <p>Haku > Calcifer</p>
-          <p>Spritz > Haku</p>
-          <p>Calcifer > Spritz</p>
-        </div>
-        <div class="difficult-game game" id="difficultGame">
-          <p>DIFFICULT</p>
-          <p>Haku >  Calcifer & No Face</p>
-          <p>Spritz > Haku & Totoro</p>
-          <p>Calcifer > Spritz & No Face</p>
-          <p>No Face > Spritz & Totoro</p>
-          <p>Totoro > Calcifer & Haku</p>
-        </div>
-      </form>
+      <main class="game-choices" id="gameChoices">
+        <section class="game-section" id="gameSection">
+          <div class="classic-game game" id="classicGame">
+            <p>CLASSIC</p>
+            <p>Haku > Calcifer</p>
+            <p>Spritz > Haku</p>
+            <p>Calcifer > Spritz</p>
+          </div>
+          <div class="difficult-game game" id="difficultGame">
+            <p>DIFFICULT</p>
+            <p>Haku >  Calcifer & No Face</p>
+            <p>Spritz > Haku & Totoro</p>
+            <p>Calcifer > Spritz & No Face</p>
+            <p>No Face > Spritz & Totoro</p>
+            <p>Totoro > Calcifer & Haku</p>
+          </div>
+        </section>
+        <section class="gameboard hidden" id="gameboard">
+          <div class="play-game" id="playGame">
+            <section>
+              <img class="fighter" id="calcifer" src="assets/calcifer.png">
+            </section>
+            <section>
+              <img class="fighter" id="spritz" src="assets/spritz.png">
+            </section>
+            <section>
+              <img class="fighter" id="haku" src="assets/haku1.png">
+            </section>
+            <section>
+              <img class="fighter" id="noFace" src="assets/noFace.png">
+            </section>
+            <section>
+              <img class="fighter" id="totoro" src="assets/totoroSkeleton.png">
+            </section>
+          </div>
+        </section>
+      </main>
     </section>
     <aside class="left-side" id="leftSide">
       <div class="turnip-side">
-        <img class="turnip image" src="assets/turnipHead.png">
+        <img class="turnip image" id="turnipImg" src="assets/turnipHead.png">
         <h3 class="player-two" id="CompPlayer">Turnip Head</h3>
         <p class="turnip-wins" id="turnipWins">Wins:</p>
       </div>
     </aside>
-    <section class="gameboard1 hidden" id="gameboard1">
-      <div class="play-game" id="playGame">
-        <section>
-          <img class="token" id="calcifer" src="assets/calcifer.png">
-        </section>
-        <section>
-          <img class="token" id="spritz" src="assets/spritz.png">
-        </section>
-        <section>
-          <img class="token" id="haku" src="assets/haku1.png">
-        </section>
-      </div>
-    </section>
     <script src="./src/Player.js"></script>
     <script src="./src/Game.js"></script>
     <script src="./src/main.js"></script>
