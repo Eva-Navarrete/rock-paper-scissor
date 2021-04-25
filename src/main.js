@@ -4,11 +4,13 @@ var difficultGame = document.getElementById('difficultGame');
 var gameSection = document.getElementById('gameSection');
 var gameChoices = document.getElementById('gameChoices');
 var gameboard = document.getElementById('gameboard');
-var humanPlayer = document.getElementById('humanPlayer')
-var compPlayer = document.getElementById('humanPlayer');
-var calciferFighter = document.getElementById('calcifer');
-var spritzFighter = document.getElementById('spritz');
-var hakuFighter = document.getElementById('haku');
+var princessWins = document.getElementById('princessWins');
+var turnipWins = document.getElementById('turnipWins');
+// var humanPlayer = document.getElementById('humanPlayer')
+// var compPlayer = document.getElementById('humanPlayer');
+// var calciferFighter = document.getElementById('calcifer');
+// var spritzFighter = document.getElementById('spritz');
+// var hakuFighter = document.getElementById('haku');
 var noFaceFighter = document.getElementById('noFace');
 var totoroFighter = document.getElementById('totoro')
 
@@ -57,6 +59,7 @@ function playClassic(event) {
   game.chooseGameType();
   fight(event);
   game.playClassicGame();
+  displayScore()
   console.log(game.human);
   console.log(game.computer);
 }
@@ -65,6 +68,7 @@ function playDifficult(event) {
   game.chooseGameType();
   fight(event);
   game.playDifficultGame();
+  displayScore()
   console.log(game.human);
   console.log(game.computer)
 
@@ -84,4 +88,11 @@ function fight(event) {
   } else if(event.target.id === 'totoro'){
     game.human.choice = 'totoro';
   }
+}
+
+
+
+function displayScore() {
+ turnipWins.textContent = `Wins: ${game.computer.totalWins}`;
+ princessWins.textContent = `Wins: ${game.human.totalWins}`;
 }
