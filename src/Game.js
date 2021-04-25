@@ -6,11 +6,8 @@ class Game {
     this.gameType = gameType;
     // this property whenever game is started will be assigned
     this.fighter = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro'];
-    // this.humanWeapon = null;
-    // this.computerWeapon = null;
 
 
-    // add all five tokens in here first put the 3 easy tokens then the last two that make it difficult if a game this.type = diffcicult use all 5 if its classic use first 3
   }
 
   chooseRandomIndex() {
@@ -27,23 +24,30 @@ class Game {
     }
   }
 
-  playClassicGame(chooseRandomIndex) {
+  playClassicGame() {
     if (this.human.choice === 'haku' && this.computer.choice === 'calcifer') {
       this.human.isWinner = true;
+      this.human.totalWins +=1;
     } else if (this.human.choice === 'spritz' && this.computer.choice === 'haku') {
       this.human.isWinner = true;
+      this.human.totalWins +=1;
     } else if (this.human.choice === 'calcifer' && this.computer.choice === 'spritz') {
       this.human.isWinner = true;
+      this.human.totalWins +=1;
     } else if (this.computer.choice === 'haku' && this.human.choice === 'calcifer'){
       this.computer.isWinner = true;
+      this.computer.totalWins +=1;
     }else if (this.computer.choice === 'spritz' && this.human.choice === 'haku'){
       this.computer.isWinner =true;
+      this.computer.totalWins += 1;
     }else if (this.computer.choice === 'calcifer' && this.human.choice === 'spritz') {
       this.computer.isWinner = true;
+      this.computer.totalWins += 1;
     } else if (this.human.choice === this.computer.choice){
       this.isWinner = null;
     }
-
+// console.log(this.computer);
+// console.log(this.human);
   }
 
 
