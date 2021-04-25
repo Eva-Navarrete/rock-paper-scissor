@@ -22,9 +22,6 @@ difficultGame.addEventListener('click', displayDifficultGame);
 gameboard.addEventListener('click', playClassic);
 
 var game = {};
-// game.chooseRandomIndex(this.fighter);
-// game.playClassicGame();
-// console.log(game.computerWeapon);
 var gameType = '';
 
 // FUNCTIONS
@@ -51,6 +48,7 @@ function displayClassicGame() {
 function displayDifficultGame(event) {
   gameType = 'Difficult';
   game = new Game(gameType);
+  fight(event);
     hide(gameSection);
     show(gameboard);
 
@@ -60,35 +58,41 @@ function displayDifficultGame(event) {
   // this will hide the 'container' and display the game difficult game board choosen with difficult tokens
 }
 
-function playClassic(){
-  console.log('hello');
+function playClassic() {
   game.playClassicGame();
+  game.chooseGameType();
   fight(event);
-
 }
+
+function playDifficult() {
+  game.playDifficultGame();
+  game.chooseGameType();
+  fight(event);
+}
+
+
 
 function fight(event) {
   // var fighters = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro']
   game.chooseRandomIndex();
+  // game.chooseRandomIndex();
 console.log(game.computer);
-// console.log();
   if (event.target.id === 'calcifer') {
-    game.human.choice = 'calcifer'
+    game.human.choice = 'calcifer';
     console.log(game.human);
-    // this.humanWeapon = calciferFighter;
   } else if (event.target.id === 'haku') {
-    console.log(event.target.id)
-    // this.humanWeapon = hakuFighter;
+    game.human.choice = 'haku';
+    console.log(game.human)
   } else if (event.target.id === 'spritz') {
-    console.log(event.target.id)
-    // this.humanWeapon = spritzFighter
+    game.human.choice = 'spritz';
+    console.log(game.human)
   }else if (event.target.id === 'noFace') {
-    console.log(event.target.id);
+    game.human.choice = 'noFace';
+    console.log(game.human)
   } else if(event.target.id === 'totoro'){
-    console.log(event.target.id);
+    game.human.choice = 'totoro';
+    console.log(game.human)
+
   }
 
-
-
-  console.log("YOLO");
 }
