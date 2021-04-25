@@ -9,7 +9,7 @@ var princessWins = document.getElementById('princessWins');
 var turnipWins = document.getElementById('turnipWins');
 // var humanPlayer = document.getElementById('humanPlayer')
 // var compPlayer = document.getElementById('humanPlayer');
-// var calciferFighter = document.getElementById('calcifer');
+var calciferFighter = document.getElementById('calcifer');
 // var spritzFighter = document.getElementById('spritz');
 // var hakuFighter = document.getElementById('haku');
 var noFaceFighter = document.getElementById('noFace');
@@ -38,9 +38,12 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
+var gameChosen = document.getElementById('gameChosen');
+
 function displayClassicGame() {
   gameType = 'Classic';
   game = new Game(gameType);
+  gameChosen.innerText = 'Choose your FIGHTER!!';
   hide(gameSection);
   show(gameboard);
   hide(totoroFighter);
@@ -48,10 +51,9 @@ function displayClassicGame() {
 
 }
 
-function displayDifficultGame(event) {
+function displayDifficultGame() {
   gameType = 'Difficult';
   game = new Game(gameType);
-  fight(event);
   hide(gameSection);
   show(gameboard);
 }
@@ -61,7 +63,8 @@ function playClassic(event) {
   fight(event);
   game.playClassicGame();
   show(changeGameBtn);
-  displayScore()
+// call displayWinner
+  displayWinnerAndScore()
   console.log(game.human);
   console.log(game.computer);
 }
@@ -70,7 +73,7 @@ function playDifficult(event) {
   game.chooseGameType();
   fight(event);
   game.playDifficultGame();
-  displayScore()
+  displayWinnerAndScore()
   console.log(game.human);
   console.log(game.computer)
 
@@ -92,10 +95,23 @@ function fight(event) {
   }
 }
 
-function displayScore() {
+function displayWinnerAndScore() {
   turnipWins.textContent = `Wins: ${game.computer.totalWins}`;
   princessWins.textContent = `Wins: ${game.human.totalWins}`;
-}
+  if (game.human.isWinner === true) {
+    gameChosen.innerText = "Princess Mononoke is the Winner!!";
+  } else if (game.computer.isWinner === true) {
+    gameChosen.innerText = "Turnip Head is the Winner!!";
+  } else {
+    gameChosen.innerText = "It's a Draw!!";
+  }
+
+  }
+
+
+
 //  I need a a function that changes the inner Text of the h2 tag "choose your game" to "choose your fighter" then i need to add that to the display game function.
+
 //  I need a function that displays the players selected fighter and hides the others. withing this function i need to manipulate the h2 tag to display game results. "princess/human is winner" "turnip/comp is winner" "It's a draw"
+
 //  need to add and event listener to the changeGameBtn which will take us back to home page.
