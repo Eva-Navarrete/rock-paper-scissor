@@ -51,48 +51,37 @@ function displayDifficultGame(event) {
   fight(event);
     hide(gameSection);
     show(gameboard);
-
-
-    // show()
-
-  // this will hide the 'container' and display the game difficult game board choosen with difficult tokens
 }
 
-function playClassic() {
+function playClassic(event) {
+  game.chooseGameType();
+  fight(event);
   game.playClassicGame();
-  game.chooseGameType();
-  fight(event);
+  console.log(game.human);
+  console.log(game.computer);
 }
 
-function playDifficult() {
+function playDifficult(event) {
+  game.chooseGameType();
+  fight(event);
   game.playDifficultGame();
-  game.chooseGameType();
-  fight(event);
+  console.log(game.human);
+  console.log(game.computer)
+
 }
-
-
 
 function fight(event) {
-  // var fighters = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro']
   game.chooseRandomIndex();
-  // game.chooseRandomIndex();
-console.log(game.computer);
+
   if (event.target.id === 'calcifer') {
     game.human.choice = 'calcifer';
-    console.log(game.human);
   } else if (event.target.id === 'haku') {
     game.human.choice = 'haku';
-    console.log(game.human)
   } else if (event.target.id === 'spritz') {
     game.human.choice = 'spritz';
-    console.log(game.human)
   }else if (event.target.id === 'noFace') {
     game.human.choice = 'noFace';
-    console.log(game.human)
   } else if(event.target.id === 'totoro'){
     game.human.choice = 'totoro';
-    console.log(game.human)
-
   }
-
 }
