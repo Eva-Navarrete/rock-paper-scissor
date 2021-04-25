@@ -51,11 +51,6 @@ function displayDifficultGame(event) {
   fight(event);
     hide(gameSection);
     show(gameboard);
-
-
-    // show()
-
-  // this will hide the 'container' and display the game difficult game board choosen with difficult tokens
 }
 
 function playClassic(event) {
@@ -66,14 +61,14 @@ function playClassic(event) {
   console.log(game.computer);
 }
 
-function playDifficult() {
-  game.playDifficultGame();
+function playDifficult(event) {
   game.chooseGameType();
   fight(event);
+  game.playDifficultGame();
+  console.log(game.human);
+  console.log(game.computer)
 
 }
-
-
 
 function fight(event) {
   game.chooseRandomIndex();
