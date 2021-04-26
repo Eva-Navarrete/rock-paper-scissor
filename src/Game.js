@@ -4,7 +4,7 @@ class Game {
     this.human = new Player('Princess Mononoke', '👸🏽');
     this.computer = new Player('Turnip head', '🥚')
     this.gameType = gameType;
-    this.fighter = ['calcifer', 'spritz', 'haku', 'noFace', 'totoro'];
+    this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
 
 
   }
@@ -53,7 +53,7 @@ class Game {
 
 
   playDifficultGame() {
-    if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'noFace')) {
+    if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face')) {
     this.human.isWinner = true;
     this.human.totalWins +=1;
   }
@@ -63,12 +63,12 @@ class Game {
     this.human.totalWins +=1;
   }
   //third condition
-  else if ((this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'noFace')) {
+  else if ((this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'face')) {
     this.human.isWinner = true;
     this.human.totalWins +=1;
   }
   //fourth condition
-  else if ((this.human.choice === 'noFace' && this.computer.choice === 'spritz') || (this.human.choice === 'noFace' && this.computer.choice === 'totoro')){
+  else if ((this.human.choice === 'face' && this.computer.choice === 'spritz') || (this.human.choice === 'face' && this.computer.choice === 'totoro')){
     this.human.isWinner = true;
     this.human.totalWins +=1;
   }
@@ -78,7 +78,7 @@ class Game {
     this.human.totalWins += 1;
   }
   //sixth condition
-  else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'noFace')){
+  else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'face')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
 }
@@ -88,12 +88,12 @@ else if ((this.computer.choice === 'spritz' && this.human.choice === 'haku') || 
   this.computer.totalWins +=1;
 }
 //eigth condition **************
-else if ((this.computer.choice === 'calcifer' && this.human.choice === 'spritz' ) || (this.computer.choice === 'calcifer' && this.human.choice === 'noFace')){
+else if ((this.computer.choice === 'calcifer' && this.human.choice === 'spritz' ) || (this.computer.choice === 'calcifer' && this.human.choice === 'face')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
 }
 //ninth condition ********************
-else if ((this.computer.choice === 'noFace' && this.human.choice === 'spritz') || (this.computer.choice === 'noFace' && this.human.choice === 'totoro')){
+else if ((this.computer.choice === 'face' && this.human.choice === 'spritz') || (this.computer.choice === 'face' && this.human.choice === 'totoro')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
 } //tenth condition *******************

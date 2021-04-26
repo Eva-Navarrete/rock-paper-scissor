@@ -13,7 +13,7 @@ var winnersSection = document.getElementById('winners');
 var calciferFighter = document.getElementById('calcifer');
 // var spritzFighter = document.getElementById('spritz');
 // var hakuFighter = document.getElementById('haku');
-var noFaceFighter = document.getElementById('noFace');
+var noFaceFighter = document.getElementById('face');
 var totoroFighter = document.getElementById('totoro')
 
 
@@ -106,8 +106,8 @@ function fight(event) {
     game.human.choice = 'haku';
   } else if (event.target.id === 'spritz') {
     game.human.choice = 'spritz';
-  } else if (event.target.id === 'noFace') {
-    game.human.choice = 'noFace';
+  } else if (event.target.id === 'face') {
+    game.human.choice = 'face';
   } else if (event.target.id === 'totoro') {
     game.human.choice = 'totoro';
   }

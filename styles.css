@@ -127,7 +127,7 @@ span {
   background-size: cover;
 }
 
-.no-face {
+.face {
   background: url('assets/noFace.png');
   background-size: cover;
 }
