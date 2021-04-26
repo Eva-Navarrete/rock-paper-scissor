@@ -1,19 +1,37 @@
 * {
   margin: 0;
-  font-family: 'Courgette', cursive;
+  font-family: 'Comfortaa', cursive;
+  ;
+  font-weight: 500;
   border: 1px solid red;
+  color: white;
+  text-align: center;
   /* background-color: #A9A9A9; */
   /* background-size: 100%;
   background-image: url(assets/pngeggtoto.png); */
 }
 
+html {
+  background-image: url(assets/studioG.png);
+  background-size: 100%;
+  /* filter: contrast(30%); */
+}
+
 body {
   display: flex;
   justify-content: space-between;
-  background-size: auto;
+  /* min-height:100%; */
+  /* background-image: url(assets/forest_spirit__s_grove_by_artimis07.jpeg);
+  filter: contrast(50%); */
+  /* background-size: auto;
   background-image: url(assets/totoro1.png);
   height: 100vh;
-  width: 100vw;
+  width: 100vw; */
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 1000;
 }
 
 div {
@@ -38,30 +56,85 @@ div {
   margin: 1em;
   height: 10em;
   width: 20em;
-  box-shadow: inset 0 0 0 200px rgba(197, 79, 79,0.3);
+  box-shadow: inset 0 0 0 200px rgba(118, 173, 205, .5);
   /* filter: blur(10px) */
   /* background: rgb(226, 224, 235); */
+}
 
+button {
+  border-radius: .2em;
+  padding: .3em;
+  background-color: #b3daff;
+  margin-top: 4em;
+  padding: 0.6em;
+  width: 11em;
+  border: transparent;
+  /* outline: transparent; */
+}
+span {
+  color:  #004d99;
+  /* font-weight: 600; */
 }
 
 .right-side,
 .left-side {
   height: 100vh;
   width: 30vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em
 }
 
 .image {
   height: 50vh;
 }
+
 .fighter {
   height: 25vh;
+  width: 25vh;
 }
 
 .play-game {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  margin-top: 5em;
+  flex-wrap: wrap;
+  margin-top: 6em;
+  /* min-width: 500px; */
+}
+
+.winners {
+  display: flex;
+  justify-content: center;
+  flex-direction:  row;
+  margin-top: 6em;
+}
+
+.calcifer {
+  background: url('assets/calcifer.png');
+  background-size: cover;
+}
+
+.spritz {
+  background: url('assets/spritz.png');
+  background-size: cover;
+}
+
+.haku {
+  background: url('assets/haku1.png');
+  background-size: cover;
+}
+
+.no-face {
+  background: url('assets/noFace.png');
+  background-size: cover;
+}
+
+.totoro {
+  background: url('assets/totoroSkeleton.png');
+  background-size: cover;
 }
 
 .hidden {

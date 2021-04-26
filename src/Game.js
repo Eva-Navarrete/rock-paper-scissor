@@ -17,8 +17,11 @@ class Game {
 
   }
   chooseGameType() {
-    if (gameType === 'Classic') {
+    if (this.gameType === 'Classic') {
       this.fighter = ['calcifer', 'spritz', 'haku'];
+      console.log(this.fighter);
+    } else if (this.gameType === 'Difficult') {
+      this.fighter;
     }
   }
 
@@ -51,47 +54,67 @@ class Game {
 
 
   playDifficultGame() {
-    if (this.human.choice === 'haku' && this.computer.choice === 'calcifer' || this.computer.choice === 'noFace') {
+    if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'noFace')) {
     this.human.isWinner = true;
     this.human.totalWins +=1;
-  } else if (this.human.choice === 'spritz' && this.computer.choice === 'haku' || this.computer.choice === 'totoro') {
+  }
+  // second condition
+  else if ((this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'spritz' && this.computer.choice === 'totoro')) {
     this.human.isWinner = true;
     this.human.totalWins +=1;
-  } else if (this.human.choice === 'calcifer' && this.computer.choice === 'spritz' || this.computer.choice === 'noFace') {
+  }
+  //third condition
+  else if ((this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'noFace')) {
     this.human.isWinner = true;
     this.human.totalWins +=1;
-  } else if (this.human.choice === 'noFace' && this.computer.choice === 'spritz' || this.computer.choice === 'totoro'){
+  }
+  //fourth condition
+  else if ((this.human.choice === 'noFace' && this.computer.choice === 'spritz') || (this.human.choice === 'noFace' && this.computer.choice === 'totoro')){
     this.human.isWinner = true;
     this.human.totalWins +=1;
-  }else if (this.human.choice === 'totoro' && this.computer.choice === 'calcifer' || this.computer.choice === 'haku'){
+  }
+  //fifth condition
+  else if ((this.human.choice === 'totoro' && this.computer.choice === 'calcifer') || (this.human.choice === 'totoro' && this.computer.choice === 'haku')){
     this.human.isWinner =true;
     this.human.totalWins += 1;
-  } else if (this.computer.choice === 'haku' && this.human.choice === 'calcifer' || this.human.choice === 'noFace') {
+  }
+  //sixth condition
+  else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'noFace')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
-} else if (this.computer.choice === 'spritz' && this.human.choice === 'haku' || this.human.choice === 'totoro') {
+}
+//seventh condition ****************
+else if ((this.computer.choice === 'spritz' && this.human.choice === 'haku') || (this.computer.choice === 'spritz' && this.human.choice === 'totoro')) {
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
-} else if (this.computer.choice === 'calcifer' && this.human.choice === 'spritz' || this.human.choice === 'noFace') {
+}
+//eigth condition **************
+else if ((this.computer.choice === 'calcifer' && this.human.choice === 'spritz' ) || (this.computer.choice === 'calcifer' && this.human.choice === 'noFace')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
-} else if (this.computer.choice === 'noFace' && this.human.choice === 'spritz' || this.human.choice === 'totoro'){
+}
+//ninth condition ********************
+else if ((this.computer.choice === 'noFace' && this.human.choice === 'spritz') || (this.computer.choice === 'noFace' && this.human.choice === 'totoro')){
   this.computer.isWinner = true;
   this.computer.totalWins +=1;
-}else if (this.computer.choice === 'totoro' && this.human.choice === 'calcifer' || this.human.choice === 'haku'){
+} //tenth condition *******************
+else if ((this.computer.choice === 'totoro' && this.human.choice === 'calcifer') || (this.computer.choice === 'totoro' && this.human.choice === 'haku')){
   this.computer.isWinner =true;
   this.computer.totalWins += 1;
-  } else if (this.human.choice === this.computer.choice) {
+  }
+// last CONDITION BAYBAY!
+  else if (this.human.choice === this.computer.choice) {
   this.isWinner = null;
 }
   }
 
-  checkWinner() {
-    //check for winner based on conditionals from chooseToken()
-    // have condition for DRAW in game
 
-  }
-  resetBoard() {
+  resetBoard(resetFunk) {
+    this.human.isWinner = false;
+    this.computer.isWinner = false;
+    this.human.choice = null;
+    this.computer.choice = null;
+    setTimeout(resetFunk, 3000);
 
     // setTimeOut or setInterval is DOM it will need to be in main.js
   }
