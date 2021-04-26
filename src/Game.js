@@ -17,8 +17,11 @@ class Game {
 
   }
   chooseGameType() {
-    if (gameType === 'Classic') {
+    if (this.gameType === 'Classic') {
       this.fighter = ['calcifer', 'spritz', 'haku'];
+      console.log(this.fighter);
+    } else if (this.gameType === 'Difficult') {
+      this.fighter;
     }
   }
 
@@ -91,7 +94,12 @@ class Game {
     // have condition for DRAW in game
 
   }
-  resetBoard() {
+  resetBoard(resetFunk) {
+    this.human.isWinner = false;
+    this.computer.isWinner = false;
+    this.human.choice = null;
+    this.computer.choice = null;
+    setTimeout(resetFunk, 3000);
 
     // setTimeOut or setInterval is DOM it will need to be in main.js
   }

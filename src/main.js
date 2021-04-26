@@ -7,6 +7,7 @@ var gameboard = document.getElementById('gameboard');
 var changeGameBtn = document.getElementById('changeGameButton');
 var princessWins = document.getElementById('princessWins');
 var turnipWins = document.getElementById('turnipWins');
+var winnersSection = document.getElementById('winners');
 // var humanPlayer = document.getElementById('humanPlayer')
 // var compPlayer = document.getElementById('humanPlayer');
 var calciferFighter = document.getElementById('calcifer');
@@ -24,8 +25,9 @@ classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 gameboard.addEventListener('click', playClassic);
 
-var game = {};
-var gameType = '';
+// var game = {};
+// var gameType = '';
+var game = new Game();
 
 // FUNCTIONS
 
@@ -41,41 +43,51 @@ function hide(element) {
 var gameChosen = document.getElementById('gameChosen');
 
 function displayClassicGame() {
-  gameType = 'Classic';
-  game = new Game(gameType);
+  game.gameType = 'Classic';
+  humanWinner.classList = 'fighter';
+  computerWinner.classList = 'fighter';
+  // game = new Game(gameType);
   gameChosen.innerText = 'Choose your FIGHTER!!';
+  hide(winnersSection);
   hide(gameSection);
   show(gameboard);
-  hide(totoroFighter);
-  hide(noFaceFighter);
+  game.chooseGameType()
 
 }
 
 function displayDifficultGame() {
-  gameType = 'Difficult';
-  game = new Game(gameType);
+  game.gameType = 'Difficult';
+  humanWinner.classList = 'fighter';
+  computerWinner.classList = 'fighter';
+  // game = new Game(gameType);
+  gameChosen.innerText = 'Choose your FIGHTER!!';
+  hide(winnersSection)
   hide(gameSection);
   show(gameboard);
 }
 
-function playClassic(event) {
-  game.chooseGameType();
+function playClassic(event) {;
   fight(event);
   game.playClassicGame();
   show(changeGameBtn);
-// call displayWinner
-  displayWinnerAndScore()
+  displayWinnerAndScore();
   console.log(game.human);
   console.log(game.computer);
+  displayEndOfGameCharacter();
+  game.resetBoard(displayClassicGame);
+
 }
 
 function playDifficult(event) {
-  game.chooseGameType();
   fight(event);
   game.playDifficultGame();
-  displayWinnerAndScore()
+  show(changeGameBtn);
+  displayWinnerAndScore();
   console.log(game.human);
-  console.log(game.computer)
+  console.log(game.computer);
+  displayEndOfGameCharacter();
+  game.resetBoard(displayDifficultGame);
+
 
 }
 
@@ -107,6 +119,24 @@ function displayWinnerAndScore() {
   }
 
   }
+
+
+var humanWinner = document.getElementById('humanWinner');
+var computerWinner = document.getElementById('computerWinner');
+
+  function displayEndOfGameCharacter() {
+
+    humanWinner.classList.add(game.human.choice);
+    computerWinner.classList.add(game.computer.choice);
+
+
+    hide(gameboard);
+    show(winnersSection);
+
+
+
+  }
+
 
 
 
