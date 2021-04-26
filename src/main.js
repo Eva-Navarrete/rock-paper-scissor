@@ -48,6 +48,8 @@ function displayClassicGame() {
   computerWinner.classList = 'fighter';
   // game = new Game(gameType);
   gameChosen.innerText = 'Choose your FIGHTER!!';
+  hide(totoroFighter);
+  hide(noFaceFighter)
   hide(winnersSection);
   hide(gameSection);
   show(gameboard);
@@ -74,6 +76,8 @@ function playClassic(event) {;
   console.log(game.human);
   console.log(game.computer);
   displayEndOfGameCharacter();
+  game.human.saveToStorage();
+  game.computer.saveToStorage();
   game.resetBoard(displayClassicGame);
 
 }
@@ -86,6 +90,8 @@ function playDifficult(event) {
   console.log(game.human);
   console.log(game.computer);
   displayEndOfGameCharacter();
+  game.human.saveToStorage();
+  game.computer.saveToStorage();
   game.resetBoard(displayDifficultGame);
 
 

@@ -19,7 +19,6 @@ class Game {
   chooseGameType() {
     if (this.gameType === 'Classic') {
       this.fighter = ['calcifer', 'spritz', 'haku'];
-      console.log(this.fighter);
     } else if (this.gameType === 'Difficult') {
       this.fighter;
     }
