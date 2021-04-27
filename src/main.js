@@ -74,20 +74,7 @@ function displayDifficultGame() {
   show(gameboard);
 }
 
-
-// function playGame() {
-//
-// }
 function playGame(event) {
-  // fight(event);
-  // game.playClassicGame();
-  // displayWinnerAndScore();
-  // show(changeGameBtn);
-  // console.log(game.human);
-  // console.log(game.computer);
-  // displayEndOfGameCharacter();
-  // game.human.saveToStorage();
-  // game.computer.saveToStorage();
   if (game.gameType === 'Classic') {
     fight(event);
     game.playClassicGame();
@@ -111,14 +98,10 @@ function playGame(event) {
 
 }
 
-
-
- function displayHomeView() {
-
-   show(gameSection);
-   hide(gameboard);
-   // hide(playGameSection);
-   // hide(winnersSection);
+  function displayHomeView() {
+    show(gameSection);
+    hide(gameboard);
+    hide(changeGameBtn);
  }
 
 function fight(event) {
