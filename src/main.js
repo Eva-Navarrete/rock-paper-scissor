@@ -82,12 +82,16 @@ function playGame(event) {
     displayEndOfGameCharacter();
     console.log(game.human);
     console.log(game.computer);
+    console.log(game.human.saveToStorage());
+    console.log(game.computer.saveToStorage());
     game.resetBoard(displayClassicGame);
   } else {
     fight(event);
     game.playDifficultGame();
     displayWinnerAndScore();
     displayEndOfGameCharacter();
+    console.log(game.human.saveToStorage());
+    console.log(game.computer.saveToStorage());
     game.resetBoard(displayDifficultGame);
   }
   // console.log(game.human);

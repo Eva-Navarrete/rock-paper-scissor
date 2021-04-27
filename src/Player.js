@@ -6,13 +6,13 @@ class Player {
     this.totalWins = 0;
     this.isWinner = false;
   }
+
+  calculateWins() {
+    this.totalWins ++;
+  }
+
   saveToStorage() {
-    var saveHumanWins = game.human.totalWins;
-    var saveComputerWins = game.computer.totalWins;
-    localStorage.setItem('princessWins', JSON.stringify(saveHumanWins));
-    localStorage.setItem('turnipWIns', JSON.stringify(savedComputerWins));
-    localStorage.setItem('princessWins', saveHumanWins);
-    localStorage.setItem('turnipWins', saveComputerWins);
+    localStorage.setItem(`${this.totalWins}`, JSON.stringify(this));
     // var result = {
     //   princessWins: 0,
     //   compWins: 0,
@@ -27,17 +27,12 @@ class Player {
     // console.log()
   }
   retreiveFromStorage() {
-    var storedHumanWins = localStorage.getItem('princessWins');
-    var storedComputerWins = localStorage.getItem('turnipWins');
-    var humanWins = JSON.parse(storedHumanWins);
-    var computerWins = JSON.parse(storedComputerWins);
-    this.totalWins = humanWins;
-    console.log(storedHumanWins);
-    console.log(storedComputerWins);
-    return humanWins;
+  var result = JSON.parse(localStorage.getItem(`${this.name}`));
+  return result;
 
     // I need to show what the players selection/value of properties are. by retrieving from local storage
   }
+
   // takeTurn() {
   //
   //   // pass in another player instance into this function and compare their turn values. conditional if player one true other false and vice versa
