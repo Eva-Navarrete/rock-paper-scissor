@@ -9,26 +9,25 @@
 
   }
 
-  chooseRandomIndex() {
 
+  chooseGameType() {
+    if (this.gameType === 'Classic') {
+      this.fighter = ['calcifer', 'spritz', 'haku'];
+    } else  {
+      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
+    }
+  }
+
+  chooseRandomIndex() {
     var randomIndex = Math.floor(Math.random() * this.fighter.length);
     this.computer.choice = this.fighter[randomIndex];
     return this.computer.choice;
-
-  }
-  
-  chooseGameType(gType) {
-    if (gType === 'Difficult') {
-      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
-    } else if (gType === 'Classic') {
-      this.fighter = ['calcifer', 'spritz', 'haku'];
-    }
   }
 
   playClassicGame() {
     if (this.human.choice === 'haku' && this.computer.choice === 'calcifer') {
       this.human.isWinner = true;
-      this.human.totalWins +=1;
+      this.human.totalWins +=1
     } else if (this.human.choice === 'spritz' && this.computer.choice === 'haku') {
       this.human.isWinner = true;
       this.human.totalWins +=1;
@@ -47,11 +46,7 @@
     } else if (this.human.choice === this.computer.choice){
       this.isWinner = null;
     }
-// console.log(this.computer);
-// console.log(this.human);
   }
-
-
 
   playDifficultGame() {
     if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face')) {
@@ -108,16 +103,11 @@ else if ((this.computer.choice === 'totoro' && this.human.choice === 'calcifer')
 }
   }
 
-
   resetBoard(resetFunk) {
-
     this.human.isWinner = false;
     this.computer.isWinner = false;
     this.human.choice = null;
     this.computer.choice = null;
-    setTimeout(resetFunk, 1000);
-
-    // setTimeOut or setInterval is DOM it will need to be in main.js
+    setTimeout(resetFunk, 2000);
   }
-
 }

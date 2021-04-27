@@ -36,7 +36,7 @@ var game = new Game();
 
 
 function show(element) {
-  element.classList.toggle('hidden');
+  element.classList.remove('hidden');
 }
 
 function hide(element) {
@@ -46,7 +46,8 @@ function hide(element) {
 var gameChosen = document.getElementById('gameChosen');
 
 function displayClassicGame() {
-  // game.gameType = 'Classic';
+  game.gameType = 'Classic';
+  game.chooseGameType('Classic')
   humanWinner.classList = 'fighter';
   computerWinner.classList = 'fighter';
   gameChosen.innerText = 'Choose your FIGHTER!!';
@@ -56,53 +57,55 @@ function displayClassicGame() {
   hide(winnersSection);
   hide(gameSection);
   show(gameboard);
-  game.chooseGameType('Classic')
 
 }
 
 function displayDifficultGame() {
-  // game.gameType = 'Difficult';
+  game.gameType = 'Difficult';
+  game.chooseGameType('Difficult');
   humanWinner.classList = 'fighter';
   computerWinner.classList = 'fighter';
   gameChosen.innerText = 'Choose your FIGHTER!!';
+  show(totoroFighter);
+  show(noFaceFighter);
   show(changeGameBtn);
   hide(winnersSection);
   hide(gameSection);
   show(gameboard);
-  game.chooseGameType('Difficult');
 }
-
-
 
 function playGame(event) {
-  fight(event);
-  game.playClassicGame();
-  displayWinnerAndScore();
-  // show(changeGameBtn);
-  console.log(game.human);
-  console.log(game.computer);
-  displayEndOfGameCharacter();
-  game.human.saveToStorage();
-  // game.computer.saveToStorage();
   if (game.gameType === 'Classic') {
+    fight(event);
+    game.playClassicGame();
+    displayWinnerAndScore();
+    displayEndOfGameCharacter();
+    console.log(game.human);
+    console.log(game.computer);
+    console.log(game.human.saveToStorage());
+    console.log(game.computer.saveToStorage());
     game.resetBoard(displayClassicGame);
-
   } else {
-  game.resetBoard(displayDifficultGame);
+    fight(event);
+    game.playDifficultGame();
+    displayWinnerAndScore();
+    displayEndOfGameCharacter();
+    console.log(game.human.saveToStorage());
+    console.log(game.computer.saveToStorage());
+    game.resetBoard(displayDifficultGame);
   }
-  console.log(localStorage.getItem('totalWins'));
-  let obj = JSON.parse(localStorage.getItem('totalWins'));
-  console.log(obj.princessWins);
+  // console.log(game.human);
+  // console.log(game.computer);
+  // console.log(localStorage.getItem('totalWins'));
+  // let obj = JSON.parse(localStorage.getItem('totalWins'));
+  // console.log(obj.princessWins);
 
 }
 
-
- function displayHomeView() {
-
-   show(gameSection);
-   hide(gameboard);
-   // hide(playGameSection);
-   // hide(winnersSection);
+  function displayHomeView() {
+    show(gameSection);
+    hide(gameboard);
+    hide(changeGameBtn);
  }
 
 function fight(event) {
@@ -135,18 +138,9 @@ function displayWinnerAndScore() {
 
   }
 
-
-
-
   function displayEndOfGameCharacter() {
-
     humanWinner.classList.add(game.human.choice);
     computerWinner.classList.add(game.computer.choice);
-
-
     hide(gameboard);
     show(winnersSection);
-
-
-
   }
