@@ -70,6 +70,9 @@ GitHub Page Link: https://github.com/Eva-Navarrete/rock-paper-scissor
 * Add option for players to input their info
 * Add option to play against another person instead of computer
 
+
+Visit My Page [Rock, Paper, Scissor/ Haku, Spritz, Calcifer](https://eva-navarrete.github.io/rock-paper-scissor/)
+
 ## Credits
 #### Authors
 <table>
