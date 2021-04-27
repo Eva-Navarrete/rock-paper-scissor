@@ -1,5 +1,5 @@
 
-class Game {
+  class Game {
   constructor(gameType) {
     this.human = new Player('Princess Mononoke', '👸🏽');
     this.computer = new Player('Turnip head', '🥚')
@@ -16,11 +16,11 @@ class Game {
     return this.computer.choice;
 
   }
-  chooseGameType() {
-    if (this.gameType === 'Classic') {
+  chooseGameType(gType) {
+    if (gType === 'Difficult') {
+      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
+    } else if (gType === 'Classic') {
       this.fighter = ['calcifer', 'spritz', 'haku'];
-    } else if (this.gameType === 'Difficult') {
-      this.fighter;
     }
   }
 
@@ -109,6 +109,7 @@ else if ((this.computer.choice === 'totoro' && this.human.choice === 'calcifer')
 
 
   resetBoard(resetFunk) {
+
     this.human.isWinner = false;
     this.computer.isWinner = false;
     this.human.choice = null;

@@ -7,8 +7,18 @@ class Player {
     this.isWinner = false;
   }
   saveToStorage() {
-    localStorage.setItem(`${this.totalWins}`, JSON.stringify(this));
-    console.log(this);
+    var result = {
+      princessWins: 0,
+      compWins: 0,
+    }
+    if (this.name === 'Princess Mononoke') {
+      result.princessWins = this.totalWins;
+    } else {
+      result.compWins = this.totalWins;
+    }
+    console.log(result);
+    localStorage.setItem('totalWins',JSON.stringify(result));
+    console.log()
   }
   retreiveFromStorage() {
     // I need to show what the players selection/value of properties are. by retrieving from local storage

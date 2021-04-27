@@ -1,4 +1,6 @@
+
 // QUERY SELECTORS
+
 var classicGame = document.getElementById('classicGame');
 var difficultGame = document.getElementById('difficultGame');
 var gameSection = document.getElementById('gameSection');
@@ -8,6 +10,7 @@ var changeGameBtn = document.getElementById('changeGameButton');
 var princessWins = document.getElementById('princessWins');
 var turnipWins = document.getElementById('turnipWins');
 var winnersSection = document.getElementById('winners');
+var playGameSection = document.getElementById('playGame');
 // var humanPlayer = document.getElementById('humanPlayer')
 // var compPlayer = document.getElementById('humanPlayer');
 var calciferFighter = document.getElementById('calcifer');
@@ -23,7 +26,8 @@ var totoroFighter = document.getElementById('totoro')
 // // EVENT LISTENERS
 classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
-gameboard.addEventListener('click', playClassic);
+gameboard.addEventListener('click', playGame);
+changeGameBtn.addEventListener('click', displayHomeView);
 
 // var game = {};
 // var gameType = '';
@@ -49,11 +53,11 @@ function displayClassicGame() {
   // game = new Game(gameType);
   gameChosen.innerText = 'Choose your FIGHTER!!';
   hide(totoroFighter);
-  hide(noFaceFighter)
+  hide(noFaceFighter);
   hide(winnersSection);
   hide(gameSection);
   show(gameboard);
-  game.chooseGameType()
+  game.chooseGameType('Classic')
 
 }
 
@@ -63,12 +67,15 @@ function displayDifficultGame() {
   computerWinner.classList = 'fighter';
   // game = new Game(gameType);
   gameChosen.innerText = 'Choose your FIGHTER!!';
-  hide(winnersSection)
+  hide(winnersSection);
   hide(gameSection);
   show(gameboard);
+  game.chooseGameType('Difficult');
 }
 
-function playClassic(event) {;
+
+
+function playGame(event) {
   fight(event);
   game.playClassicGame();
   show(changeGameBtn);
@@ -77,25 +84,27 @@ function playClassic(event) {;
   console.log(game.computer);
   displayEndOfGameCharacter();
   game.human.saveToStorage();
-  game.computer.saveToStorage();
-  game.resetBoard(displayClassicGame);
+  // game.computer.saveToStorage();
+  if (game.gameType === 'Classic') {
+    game.resetBoard(displayClassicGame);
 
-}
-
-function playDifficult(event) {
-  fight(event);
-  game.playDifficultGame();
-  show(changeGameBtn);
-  displayWinnerAndScore();
-  console.log(game.human);
-  console.log(game.computer);
-  displayEndOfGameCharacter();
-  game.human.saveToStorage();
-  game.computer.saveToStorage();
+  } else {
   game.resetBoard(displayDifficultGame);
-
+  }
+  console.log(localStorage.getItem('totalWins'));
+  let obj = JSON.parse(localStorage.getItem('totalWins'));
+  console.log(obj.princessWins);
 
 }
+
+
+ function displayHomeView() {
+   location.reload()
+   // show(gameSection);
+   // hide(gameboard);
+   // hide(playGameSection);
+   // hide(winnersSection);
+ }
 
 function fight(event) {
   game.chooseRandomIndex();
@@ -111,6 +120,7 @@ function fight(event) {
   } else if (event.target.id === 'totoro') {
     game.human.choice = 'totoro';
   }
+
 }
 
 function displayWinnerAndScore() {
