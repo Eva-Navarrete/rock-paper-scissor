@@ -8,7 +8,6 @@ class Game {
 
   }
 
-
   chooseGameType() {
     var chooseGame = (this.gameType === 'Classic') ? this.fighter = ['calcifer', 'spritz', 'haku']: this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
 
@@ -22,8 +21,8 @@ class Game {
 
   playClassicGame() {
     if (this.human.choice === this.computer.choice) {
-    this.isWinner = null;
-  } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz')) {
+      this.isWinner = null;
+    } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz')) {
       this.human.isWinner = true;
       this.human.totalWins += 1
       this.human.saveToStorage();
@@ -31,15 +30,13 @@ class Game {
       this.computer.isWinner = true;
       this.computer.totalWins += 1;
       this.computer.saveToStorage();
-      // this.human.saveToStorage();
-      // this.computer.saveToStorage();
     }
   }
 
   playDifficultGame() {
     if (this.human.choice === this.computer.choice) {
-    this.isWinner = null;
-  } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'spritz' && this.computer.choice === 'totoro') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'face') || (this.human.choice === 'face' && this.computer.choice === 'spritz') || (this.human.choice === 'face' && this.computer.choice === 'totoro') || (this.human.choice === 'totoro' && this.computer.choice === 'calcifer') || (this.human.choice === 'totoro' && this.computer.choice === 'haku')) {
+      this.isWinner = null;
+    } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'spritz' && this.computer.choice === 'totoro') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'face') || (this.human.choice === 'face' && this.computer.choice === 'spritz') || (this.human.choice === 'face' && this.computer.choice === 'totoro') || (this.human.choice === 'totoro' && this.computer.choice === 'calcifer') || (this.human.choice === 'totoro' && this.computer.choice === 'haku')) {
       this.human.isWinner = true;
       this.human.totalWins += 1;
       this.human.saveToStorage();
@@ -47,8 +44,6 @@ class Game {
       this.computer.isWinner = true;
       this.computer.totalWins += 1;
       this.computer.saveToStorage();
-      // this.human.saveToStorage();
-      // this.computer.saveToStorage();
     }
   }
 

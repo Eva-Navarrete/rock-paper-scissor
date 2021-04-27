@@ -39,6 +39,10 @@ div {
   width: 75vw;
 }
 
+.game-section {
+  margin-top: 10em;
+}
+
 .game {
   display: flex;
   justify-content: center;
