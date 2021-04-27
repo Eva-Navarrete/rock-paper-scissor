@@ -10,11 +10,8 @@ class Game {
 
 
   chooseGameType() {
-    if (this.gameType === 'Classic') {
-      this.fighter = ['calcifer', 'spritz', 'haku'];
-    } else {
-      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
-    }
+    var chooseGame = (this.gameType === 'Classic') ? this.fighter = ['calcifer', 'spritz', 'haku']: this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
+
   }
 
   chooseRandomIndex() {
@@ -44,15 +41,11 @@ class Game {
       this.human.isWinner = true;
       this.human.totalWins += 1;
       this.human.saveToStorage();
-    }
-  
-    else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'face') || (this.computer.choice === 'spritz' && this.human.choice === 'haku') || (this.computer.choice === 'spritz' && this.human.choice === 'totoro') || (this.computer.choice === 'calcifer' && this.human.choice === 'spritz') || (this.computer.choice === 'calcifer' && this.human.choice === 'face') || (this.computer.choice === 'face' && this.human.choice === 'spritz') || (this.computer.choice === 'face' && this.human.choice === 'totoro') || (this.computer.choice === 'totoro' && this.human.choice === 'calcifer') || (this.computer.choice === 'totoro' && this.human.choice === 'haku')) {
+    } else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'face') || (this.computer.choice === 'spritz' && this.human.choice === 'haku') || (this.computer.choice === 'spritz' && this.human.choice === 'totoro') || (this.computer.choice === 'calcifer' && this.human.choice === 'spritz') || (this.computer.choice === 'calcifer' && this.human.choice === 'face') || (this.computer.choice === 'face' && this.human.choice === 'spritz') || (this.computer.choice === 'face' && this.human.choice === 'totoro') || (this.computer.choice === 'totoro' && this.human.choice === 'calcifer') || (this.computer.choice === 'totoro' && this.human.choice === 'haku')) {
       this.computer.isWinner = true;
       this.computer.totalWins += 1;
       this.computer.saveToStorage();
-    }
-
-    else if (this.human.choice === this.computer.choice) {
+    } else if (this.human.choice === this.computer.choice) {
       this.isWinner = null;
       // this.human.saveToStorage();
       // this.computer.saveToStorage();
