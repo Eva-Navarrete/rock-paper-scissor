@@ -9,20 +9,22 @@
 
   }
 
-  chooseRandomIndex() {
 
+  chooseGameType() {
+    if (this.gameType === 'Classic') {
+      this.fighter = ['calcifer', 'spritz', 'haku'];
+      console.log(this.fighter);
+    } else  {
+      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
+      console.log(this.fighter);
+    }
+  }
+
+  chooseRandomIndex() {
+    console.log(this.gameType);
     var randomIndex = Math.floor(Math.random() * this.fighter.length);
     this.computer.choice = this.fighter[randomIndex];
     return this.computer.choice;
-
-  }
-  
-  chooseGameType(gType) {
-    if (gType === 'Difficult') {
-      this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
-    } else if (gType === 'Classic') {
-      this.fighter = ['calcifer', 'spritz', 'haku'];
-    }
   }
 
   playClassicGame() {
@@ -115,7 +117,7 @@ else if ((this.computer.choice === 'totoro' && this.human.choice === 'calcifer')
     this.computer.isWinner = false;
     this.human.choice = null;
     this.computer.choice = null;
-    setTimeout(resetFunk, 1000);
+    setTimeout(resetFunk, 2000);
 
     // setTimeOut or setInterval is DOM it will need to be in main.js
   }
