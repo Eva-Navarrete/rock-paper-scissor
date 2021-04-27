@@ -82,16 +82,19 @@ function playGame(event) {
     displayEndOfGameCharacter();
     console.log(game.human);
     console.log(game.computer);
-    console.log(game.human.saveToStorage());
-    console.log(game.computer.saveToStorage());
+    // console.log(game.human.saveToStorage());
+    // console.log(game.computer.saveToStorage());
+    console.log(game.human.retreiveFromStorage());
+    console.log(game.computer.retreiveFromStorage());
     game.resetBoard(displayClassicGame);
   } else {
     fight(event);
     game.playDifficultGame();
     displayWinnerAndScore();
     displayEndOfGameCharacter();
-    console.log(game.human.saveToStorage());
-    console.log(game.computer.saveToStorage());
+    // console.log(game.human.saveToStorage());
+    console.log(game.human.retreiveFromStorage());
+    console.log(game.computer.retreiveFromStorage());
     game.resetBoard(displayDifficultGame);
   }
   // console.log(game.human);
