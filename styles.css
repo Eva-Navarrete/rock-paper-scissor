@@ -3,7 +3,7 @@
   font-family: 'Comfortaa', cursive;
   ;
   font-weight: 500;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: white;
   text-align: center;
   /* background-color: #A9A9A9; */
@@ -13,7 +13,7 @@
 
 html {
   background-image: url(assets/studioG.png);
-  background-size: 100%;
+  background-size: 108%;
   /* filter: contrast(30%); */
 }
 
@@ -127,7 +127,7 @@ span {
   background-size: cover;
 }
 
-.no-face {
+.face {
   background: url('assets/noFace.png');
   background-size: cover;
 }
