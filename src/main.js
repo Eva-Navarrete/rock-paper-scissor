@@ -1,6 +1,4 @@
-
 // QUERY SELECTORS
-
 var classicGame = document.getElementById('classicGame');
 var difficultGame = document.getElementById('difficultGame');
 var gameSection = document.getElementById('gameSection');
@@ -13,15 +11,10 @@ var winnersSection = document.getElementById('winners');
 var playGameSection = document.getElementById('playGame');
 var humanWinner = document.getElementById('humanWinner');
 var computerWinner = document.getElementById('computerWinner');
-// var humanPlayer = document.getElementById('humanPlayer')
-// var compPlayer = document.getElementById('humanPlayer');
 var calciferFighter = document.getElementById('calcifer');
-// var spritzFighter = document.getElementById('spritz');
-// var hakuFighter = document.getElementById('haku');
 var noFaceFighter = document.getElementById('face');
 var totoroFighter = document.getElementById('totoro')
-
-
+var gameChosen = document.getElementById('gameChosen');
 
 // // EVENT LISTENERS
 classicGame.addEventListener('click', displayClassicGame);
@@ -29,12 +22,10 @@ difficultGame.addEventListener('click', displayDifficultGame);
 gameboard.addEventListener('click', playGame);
 changeGameBtn.addEventListener('click', displayHomeView);
 
-
+// GLOBAL VARIABlES 🌎
 var game = new Game();
 
 // FUNCTIONS
-
-
 function show(element) {
   element.classList.remove('hidden');
 }
@@ -42,8 +33,6 @@ function show(element) {
 function hide(element) {
   element.classList.add('hidden');
 }
-
-var gameChosen = document.getElementById('gameChosen');
 
 function displayClassicGame() {
   game.gameType = 'Classic';
@@ -106,6 +95,7 @@ function playGame(event) {
 }
 
   function displayHomeView() {
+    gameChosen.innerText = "Choose your Game!"
     show(gameSection);
     hide(gameboard);
     hide(changeGameBtn);
