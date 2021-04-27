@@ -16,6 +16,7 @@
     return this.computer.choice;
 
   }
+  
   chooseGameType(gType) {
     if (gType === 'Difficult') {
       this.fighter = ['calcifer', 'spritz', 'haku', 'face', 'totoro'];
@@ -114,7 +115,7 @@ else if ((this.computer.choice === 'totoro' && this.human.choice === 'calcifer')
     this.computer.isWinner = false;
     this.human.choice = null;
     this.computer.choice = null;
-    setTimeout(resetFunk, 3000);
+    setTimeout(resetFunk, 1000);
 
     // setTimeOut or setInterval is DOM it will need to be in main.js
   }
