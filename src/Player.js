@@ -8,13 +8,20 @@ class Player {
   }
 
   saveToStorage() {
-    localStorage.setItem(`${this.totalWins}`, JSON.stringify(this));
+    localStorage.setItem(`${this.name}`, JSON.stringify(this.totalWins));
 
   }
-  
+
   retreiveFromStorage() {
-  var result = JSON.parse(localStorage.getItem(`${this.name}`));
-  return result;
+    if (JSON.parse(localStorage.getItem(`${this.name}`))) {
+      this.totalWins = JSON.parse(localStorage.getItem(`${this.name}`));
+    } else {
+      this.totalWins = 0;
 
-  }
+      }
+      return this.totalWins;
+    }
+
+
+
 }

@@ -21,32 +21,32 @@ class Game {
   }
 
   playClassicGame() {
-    if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz')) {
+    if (this.human.choice === this.computer.choice) {
+    this.isWinner = null;
+  } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz')) {
       this.human.isWinner = true;
       this.human.totalWins += 1
       this.human.saveToStorage();
-    } else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'spritz' && this.human.choice === 'haku') || (this.computer.choice === 'calcifer' && this.human.choice === 'spritz')) {
+    } else   {
       this.computer.isWinner = true;
       this.computer.totalWins += 1;
       this.computer.saveToStorage();
-    } else if (this.human.choice === this.computer.choice) {
-      this.isWinner = null;
       // this.human.saveToStorage();
       // this.computer.saveToStorage();
     }
   }
 
   playDifficultGame() {
-    if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'spritz' && this.computer.choice === 'totoro') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'face') || (this.human.choice === 'face' && this.computer.choice === 'spritz') || (this.human.choice === 'face' && this.computer.choice === 'totoro') || (this.human.choice === 'totoro' && this.computer.choice === 'calcifer') || (this.human.choice === 'totoro' && this.computer.choice === 'haku')) {
+    if (this.human.choice === this.computer.choice) {
+    this.isWinner = null;
+  } else if ((this.human.choice === 'haku' && this.computer.choice === 'calcifer') || (this.human.choice === 'haku' && this.computer.choice === 'face') || (this.human.choice === 'spritz' && this.computer.choice === 'haku') || (this.human.choice === 'spritz' && this.computer.choice === 'totoro') || (this.human.choice === 'calcifer' && this.computer.choice === 'spritz') || (this.human.choice === 'calcifer' && this.computer.choice === 'face') || (this.human.choice === 'face' && this.computer.choice === 'spritz') || (this.human.choice === 'face' && this.computer.choice === 'totoro') || (this.human.choice === 'totoro' && this.computer.choice === 'calcifer') || (this.human.choice === 'totoro' && this.computer.choice === 'haku')) {
       this.human.isWinner = true;
       this.human.totalWins += 1;
       this.human.saveToStorage();
-    } else if ((this.computer.choice === 'haku' && this.human.choice === 'calcifer') || (this.computer.choice === 'haku' && this.human.choice === 'face') || (this.computer.choice === 'spritz' && this.human.choice === 'haku') || (this.computer.choice === 'spritz' && this.human.choice === 'totoro') || (this.computer.choice === 'calcifer' && this.human.choice === 'spritz') || (this.computer.choice === 'calcifer' && this.human.choice === 'face') || (this.computer.choice === 'face' && this.human.choice === 'spritz') || (this.computer.choice === 'face' && this.human.choice === 'totoro') || (this.computer.choice === 'totoro' && this.human.choice === 'calcifer') || (this.computer.choice === 'totoro' && this.human.choice === 'haku')) {
+    } else  {
       this.computer.isWinner = true;
       this.computer.totalWins += 1;
       this.computer.saveToStorage();
-    } else if (this.human.choice === this.computer.choice) {
-      this.isWinner = null;
       // this.human.saveToStorage();
       // this.computer.saveToStorage();
     }

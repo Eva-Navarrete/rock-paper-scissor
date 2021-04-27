@@ -21,6 +21,7 @@ classicGame.addEventListener('click', displayClassicGame);
 difficultGame.addEventListener('click', displayDifficultGame);
 gameboard.addEventListener('click', playGame);
 changeGameBtn.addEventListener('click', displayHomeView);
+window.addEventListener('load', displayScore);
 
 // GLOBAL VARIABlES 🌎
 var game = new Game();
@@ -86,12 +87,6 @@ function playGame(event) {
     console.log(game.computer.retreiveFromStorage());
     game.resetBoard(displayDifficultGame);
   }
-  // console.log(game.human);
-  // console.log(game.computer);
-  // console.log(localStorage.getItem('totalWins'));
-  // let obj = JSON.parse(localStorage.getItem('totalWins'));
-  // console.log(obj.princessWins);
-
 }
 
   function displayHomeView() {
@@ -118,9 +113,15 @@ function fight(event) {
 
 }
 
+function displayScore() {
+  turnipWins.textContent = `Wins: ${game.computer.retreiveFromStorage()}`;
+  princessWins.textContent = `Wins: ${game.human.retreiveFromStorage()}`;
+}
+
 function displayWinnerAndScore() {
-  turnipWins.textContent = `Wins: ${game.computer.totalWins}`;
-  princessWins.textContent = `Wins: ${game.human.totalWins}`;
+  // turnipWins.textContent = `Wins: ${game.computer.retreiveFromStorage()}`;
+  // princessWins.textContent = `Wins: ${game.human.retreiveFromStorage()}`;
+  displayScore();
   if (game.human.isWinner === true) {
     gameChosen.innerText = "Princess Mononoke is the Winner!!";
   } else if (game.computer.isWinner === true) {
